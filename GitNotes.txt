@@ -1,0 +1,126 @@
+[root@192 ~]# cd /opt/
+[root@192 opt]# ll
+total 208384
+-rw-r--r--. 1 root root   9506321 Feb 10 10:45 apache-maven-3.6.3-bin.tar.gz
+-rw-r--r--. 1 root root   9722154 Feb 10 10:45 apache-tomcat-8.5.45.tar.gz
+drwxr-xr-x. 7   10  143       245 Oct  5 15:43 jdk1.8.0_231
+-rw-r--r--. 1 root root 194151339 Feb 10 10:51 jdk-8u231-linux-x64.tar.gz
+drwxr-xr-x. 6 root root        99 Feb 10 10:54 Maven
+drwxr-xr-x. 2 root root         6 Oct 31  2018 rh
+drwxr-xr-x. 9 root root       220 Feb 10 10:55 Tomcat
+[root@192 opt]# cd jd
+bash: cd: jd: No such file or directory
+[root@192 opt]# cd jdk1.8.0_231/
+[root@192 jdk1.8.0_231]# javac
+Usage: javac <options> <source files>
+where possible options include:
+  -g                         Generate all debugging info
+  -g:none                    Generate no debugging info
+  -g:{lines,vars,source}     Generate only some debugging info
+  -nowarn                    Generate no warnings
+  -verbose                   Output messages about what the compiler is doing
+  -deprecation               Output source locations where deprecated APIs are used
+  -classpath <path>          Specify where to find user class files and annotation processors
+  -cp <path>                 Specify where to find user class files and annotation processors
+  -sourcepath <path>         Specify where to find input source files
+  -bootclasspath <path>      Override location of bootstrap class files
+  -extdirs <dirs>            Override location of installed extensions
+  -endorseddirs <dirs>       Override location of endorsed standards path
+  -proc:{none,only}          Control whether annotation processing and/or compilation is done.
+  -processor <class1>[,<class2>,<class3>...] Names of the annotation processors to run; bypasses default discovery process
+  -processorpath <path>      Specify where to find annotation processors
+  -parameters                Generate metadata for reflection on method parameters
+  -d <directory>             Specify where to place generated class files
+  -s <directory>             Specify where to place generated source files
+  -h <directory>             Specify where to place generated native header files
+  -implicit:{none,class}     Specify whether or not to generate class files for implicitly referenced files
+  -encoding <encoding>       Specify character encoding used by source files
+  -source <release>          Provide source compatibility with specified release
+  -target <release>          Generate class files for specific VM version
+  -profile <profile>         Check that API used is available in the specified profile
+  -version                   Version information
+  -help                      Print a synopsis of standard options
+  -Akey[=value]              Options to pass to annotation processors
+  -X                         Print a synopsis of nonstandard options
+  -J<flag>                   Pass <flag> directly to the runtime system
+  -Werror                    Terminate compilation if warnings occur
+  @<filename>                Read options and filenames from file
+
+[root@192 jdk1.8.0_231]# java --version
+Unrecognized option: --version
+Error: Could not create the Java Virtual Machine.
+Error: A fatal exception has occurred. Program will exit.
+[root@192 jdk1.8.0_231]# java -version
+java version "1.8.0_231"
+Java(TM) SE Runtime Environment (build 1.8.0_231-b11)
+Java HotSpot(TM) 64-Bit Server VM (build 25.231-b11, mixed mode)
+[root@192 jdk1.8.0_231]# java
+Usage: java [-options] class [args...]
+           (to execute a class)
+   or  java [-options] -jar jarfile [args...]
+           (to execute a jar file)
+where options include:
+    -d32	  use a 32-bit data model if available
+    -d64	  use a 64-bit data model if available
+    -server	  to select the "server" VM
+                  The default VM is server,
+                  because you are running on a server-class machine.
+
+
+    -cp <class search path of directories and zip/jar files>
+    -classpath <class search path of directories and zip/jar files>
+                  A : separated list of directories, JAR archives,
+                  and ZIP archives to search for class files.
+    -D<name>=<value>
+                  set a system property
+    -verbose:[class|gc|jni]
+                  enable verbose output
+    -version      print product version and exit
+    -version:<value>
+                  Warning: this feature is deprecated and will be removed
+                  in a future release.
+                  require the specified version to run
+    -showversion  print product version and continue
+    -jre-restrict-search | -no-jre-restrict-search
+                  Warning: this feature is deprecated and will be removed
+                  in a future release.
+                  include/exclude user private JREs in the version search
+    -? -help      print this help message
+    -X            print help on non-standard options
+    -ea[:<packagename>...|:<classname>]
+    -enableassertions[:<packagename>...|:<classname>]
+                  enable assertions with specified granularity
+    -da[:<packagename>...|:<classname>]
+    -disableassertions[:<packagename>...|:<classname>]
+                  disable assertions with specified granularity
+    -esa | -enablesystemassertions
+                  enable system assertions
+    -dsa | -disablesystemassertions
+                  disable system assertions
+    -agentlib:<libname>[=<options>]
+                  load native agent library <libname>, e.g. -agentlib:hprof
+                  see also, -agentlib:jdwp=help and -agentlib:hprof=help
+    -agentpath:<pathname>[=<options>]
+                  load native agent library by full pathname
+    -javaagent:<jarpath>[=<options>]
+                  load Java programming language agent, see java.lang.instrument
+    -splash:<imagepath>
+                  show splash screen with specified image
+See http://www.oracle.com/technetwork/java/javase/documentation/index.html for more details.
+[root@192 jdk1.8.0_231]# vim ~/.bashrc
+[root@192 jdk1.8.0_231]# source ~/.bashrc
+[root@192 jdk1.8.0_231]# mvn --version
+Apache Maven 3.6.3 (cecedd343002696d0abb50b32b541b8a6ba2883f)
+Maven home: /opt/Maven
+Java version: 1.8.0_231, vendor: Oracle Corporation, runtime: /opt/jdk1.8.0_231/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "3.10.0-1062.4.3.el7.x86_64", arch: "amd64", family: "unix"
+[root@192 jdk1.8.0_231]# vim ~/.bashrc
+[root@192 jdk1.8.0_231]# mvn --version
+Apache Maven 3.6.3 (cecedd343002696d0abb50b32b541b8a6ba2883f)
+Maven home: /opt/Maven
+Java version: 1.8.0_231, vendor: Oracle Corporation, runtime: /opt/jdk1.8.0_231/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "3.10.0-1062.4.3.el7.x86_64", arch: "amd64", family: "unix"
+[root@192 jdk1.8.0_231]# 
+
